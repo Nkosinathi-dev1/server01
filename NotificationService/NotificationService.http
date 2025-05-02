@@ -1,0 +1,28 @@
+@NotificationService_HostAddress = http://localhost:5057
+
+GET {{NotificationService_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
+
+### Send notification as email
+POST {{NotificationService_HostAddress}}/api/notify
+Content-Type: application/json
+
+{
+  "type": "email",
+  "to": "user@example.com",
+  "subject": "Test Subject",
+  "body": "Hello from NotificationService!"
+}
+
+
+### Send notification as sms
+POST {{NotificationService_HostAddress}}/api/notify
+Content-Type: application/json
+
+{
+  "type": "sms",
+  "to": "0812345678",
+  "body": "This is a test SMS from NotificationService."
+}
