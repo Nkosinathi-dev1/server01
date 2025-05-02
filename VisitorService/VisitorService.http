@@ -1,0 +1,27 @@
+@VisitorService_HostAddress = http://localhost:5185
+
+GET {{VisitorService_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
+
+### Check-in Visitor
+POST {{VisitorService_HostAddress}}/api/visitors/checkin
+Content-Type: application/json
+
+{
+  "fullName": "John Doe",
+  "email": "johndoe@example.com",
+  "phoneNumber": "0812345678",
+  "purpose": "Food Delivery"
+}
+
+###
+
+### Check-out Visitor
+POST {{VisitorService_HostAddress}}/api/visitors/checkout
+Content-Type: application/json
+
+{
+  "visitLogId": 6
+}
