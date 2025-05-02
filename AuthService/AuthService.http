@@ -1,0 +1,37 @@
+@AuthService_HostAddress = http://localhost:5117
+
+GET {{AuthService_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
+
+
+### Register
+POST {{AuthService_HostAddress}}/api/auth/register
+Content-Type: application/json
+
+{
+  "email": "admin@example2.com",
+  "password": "Secure123!"
+}
+
+###
+
+### Login
+POST {{AuthService_HostAddress}}/api/auth/login
+Content-Type: application/json
+
+{
+  "email": "admin@example.com",
+  "password": "Secure123!"
+}
+
+###
+
+### Refresh
+POST {{AuthService_HostAddress}}/api/auth/refresh
+Content-Type: application/json
+
+{
+  "refreshToken": "sc+t473bsU+4QVVX6f0t0w=="
+}
